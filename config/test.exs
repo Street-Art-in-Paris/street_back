@@ -8,7 +8,7 @@ import Config
 config :street_art, StreetArt.Repo,
   username: "quentinlee",
   password: "postgres",
-  hostname: "localhost",
+  hostname: "db",
   database: "street_art_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10

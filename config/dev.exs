@@ -4,7 +4,7 @@ import Config
 config :street_art, StreetArt.Repo,
   username: "quentinlee",
   password: "postgres",
-  hostname: "localhost",
+  hostname: "db",
   database: "street_art_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
@@ -77,3 +77,7 @@ config :phoenix, :plug_init_mode, :runtime
 
 # Disable swoosh api client as it is only required for production adapters.
 config :swoosh, :api_client, false
+
+config :ecto, :repo,
+  queue_target: 1500,
+  queue_interval: 200
