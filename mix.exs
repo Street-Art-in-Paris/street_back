@@ -9,7 +9,8 @@ defmodule StreetArt.MixProject do
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      test_prelude: "test/test_helper.exs"
     ]
   end
 
@@ -50,7 +51,8 @@ defmodule StreetArt.MixProject do
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:bcrypt_elixir, "~> 2.0"}
+      {:bcrypt_elixir, "~> 2.0"},
+      {:faker, "~> 0.17", only: :test}
     ]
   end
 

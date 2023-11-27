@@ -4,15 +4,16 @@ defmodule StreetArt.User do
   alias StreetArt.Itinerary
 
   schema "users" do
-    field :email, :string
-    field :facebook_id, :string
-    field :first_name, :string
-    field :google_id, :string
-    field :last_name, :string
-    field :password_hash, :string
-    field :username, :string
+    field(:email, :string)
+    field(:facebook_id, :string)
+    field(:first_name, :string)
+    field(:google_id, :string)
+    field(:last_name, :string)
+    field(:password_hash, :string)
+    field(:username, :string)
+    field :password, :string, virtual: true
 
-    has_many :itinerary, Itinerary
+    has_many(:itinerary, Itinerary)
     timestamps()
   end
 
