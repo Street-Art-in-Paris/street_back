@@ -4,7 +4,7 @@ import Config
 config :street_art, StreetArt.Repo,
   username: "quentinlee",
   password: "postgres",
-  hostname: "db",
+  hostname: System.get_env("DB_HOST") || "db",
   database: "street_art_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
