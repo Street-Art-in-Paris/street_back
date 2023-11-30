@@ -21,7 +21,16 @@ defmodule StreetArt.Artwork do
   @doc false
   def changeset(artwwork, attrs) do
     artwwork
-    |> cast(attrs, [:artist_id, :address, :city, :country, :postal_code])
-    |> validate_required([:artist_id, :address, :city, :country, :postal_code])
+    |> cast(attrs, [:address, :city, :country, :postal_code])
+    |> validate_required([:address, :city, :country, :postal_code])
+    |> cast_artist(attrs)
+  end
+
+  defp cast_artist(changeset, attrs) do
+    if Map.has_key?(attrs, :artist_id) do
+      put_change(changeset, :artist_id, Map.get(attrs, :artist_id))
+    else
+      put_change(changeset, :artist_id, nil)
+    end
   end
 end

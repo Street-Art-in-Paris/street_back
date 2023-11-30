@@ -90,7 +90,7 @@ defmodule StreetArt.Artist.ArtistsTest do
       assert Artists.get_artist(artist.id)
     end
 
-    test "unexistent id should return nil" do
+    test "with unexistent id should return nil" do
       random_id = Ecto.UUID.generate()
       refute Artists.get_artist(random_id)
     end
