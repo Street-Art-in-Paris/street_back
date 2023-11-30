@@ -52,7 +52,8 @@ defmodule StreetArt.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:bcrypt_elixir, "~> 2.0"},
-      {:faker, "~> 0.17", only: :test}
+      {:faker, "~> 0.17", only: :test},
+      {:credo, "~> 1.7", only: [:dev, :test], runtime: false}
     ]
   end
 

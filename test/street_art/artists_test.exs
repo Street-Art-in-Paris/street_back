@@ -75,7 +75,7 @@ defmodule StreetArt.Artist.ArtistsTest do
 
     test "when there's no artist should return an empty list" do
       artists = Artists.list_artists()
-      assert length(artists) == 0
+      assert Enum.empty?(artists)
     end
   end
 
