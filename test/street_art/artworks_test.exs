@@ -102,7 +102,7 @@ defmodule StreetArt.Artwork.ArtworksTest do
 
     test "with no artwork available should return an empty list" do
       artworks = Artworks.list_artworks()
-      assert length(artworks) == 0
+      assert Enum.empty?(artworks)
     end
   end
 
