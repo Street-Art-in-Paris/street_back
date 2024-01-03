@@ -17,5 +17,7 @@ defmodule StreetArt.ArtworkTranslation do
     artwork_translation
     |> cast(attrs, [:artwork_id, :locale, :description, :title])
     |> validate_required([:artwork_id, :locale, :description, :title])
+    |> validate_length(:locale, max: 2)
+    |> unique_constraint([:artwork_id, :locale])
   end
 end
