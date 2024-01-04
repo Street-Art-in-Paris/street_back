@@ -15,5 +15,7 @@ defmodule StreetArt.ArtistBio do
     artist_bio
     |> cast(attrs, [:artist_id, :locale, :bio_text])
     |> validate_required([:artist_id, :locale, :bio_text])
+    |> validate_length(:locale, max: 2)
+    |> unique_constraint([:artist_id, :locale])
   end
 end
