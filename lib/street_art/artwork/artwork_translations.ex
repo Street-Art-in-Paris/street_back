@@ -35,7 +35,7 @@ defmodule StreetArt.ArtworkTranslation.ArtworkTranslations do
   defp maybe_preload_artwork(query, true), do: from(q in query, preload: [:artwork])
   defp maybe_preload_artwork(query, _), do: query
 
-  def create_artwork_translation(attrs \\ %{}) do
+  def create_artwork_translation(attrs) do
     %ArtworkTranslation{}
     |> ArtworkTranslation.changeset(attrs)
     |> Repo.insert()

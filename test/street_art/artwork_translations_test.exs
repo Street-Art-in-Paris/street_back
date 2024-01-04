@@ -97,12 +97,12 @@ defmodule StreetArt.ArtworkTranslation.ArtworkTranslationsTest do
       {:ok, artwork: artwork, artwork_translation: artwork_translation}
     end
 
-    test "with valid attrs should update the given photo", %{
+    test "with valid attrs should update the given translation", %{
       artwork_translation: artwork_translation,
       artwork: artwork
     } do
       attrs = %{
-        title: paragraph(),
+        title: word(),
         artwork_id: artwork.id
       }
 
@@ -117,7 +117,7 @@ defmodule StreetArt.ArtworkTranslation.ArtworkTranslationsTest do
       artwork_translation: artwork_translation
     } do
       attrs = %{
-        title: paragraph()
+        title: word()
       }
 
       {:error, %Ecto.Changeset{errors: errors}} =
